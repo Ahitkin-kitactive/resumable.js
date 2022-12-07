@@ -435,7 +435,7 @@
         }
 
         function addFile(uniqueIdentifier){
-          if (!$.getFromUniqueIdentifier(uniqueIdentifier)) {(function(){
+          if ($.getOpt('allowDuplicateUploads') || !$.getFromUniqueIdentifier(uniqueIdentifier)) {(function(){
             file.uniqueIdentifier = uniqueIdentifier;
             var f = new ResumableFile($, file, uniqueIdentifier);
             $.files.push(f);
